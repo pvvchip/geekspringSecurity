@@ -1,3 +1,14 @@
+INSERT INTO `geek_db`.`users` (`username`, `password`,  `enabled`)
+VALUES ('fred', '$2a$10$YIfYrC92qCYiXrsCjr15eORnGBZdpKnWYiysmNPibWJol9k7BjraS', '1');
+---
+INSERT INTO `geek_db`.`roles` (`name`) VALUES ('ROLE_MANAGER');
+---
+INSERT INTO `geek_db`.`authorities` (`username`, `authority`) VALUES ('fred', 'ROLE_MANAGER');
+---
+
+
+
+
 CREATE USER 'geek'@'localhost' IDENTIFIED BY 'geek';
 GRANT ALL PRIVILEGES ON * . * TO 'geek'@'localhost';
 ---
@@ -62,19 +73,6 @@ VALUES
 ('alex', 'ROLE_ADMIN'),
 ('alex', 'ROLE_USER'),
 ('bob', 'ROLE_USER');
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ---
 DROP TABLE IF EXISTS authors;
